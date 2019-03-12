@@ -16,22 +16,22 @@ int main() {
     std::ios::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-	
-	cin >> N;
-	v.resize(N);
-	dp.resize(N);
-	fill(all(dp), 0);
-	
-	for(int i = 0; i < N; i++) {
-		cin >> v[i];
-	}
-	
-	for(int i = 1; i < N; i++) {
-		if(i == 1) dp[i] = abs(v[i] - v[i-1]) + dp[i-1];
-		else dp[i] = min(abs(v[i] - v[i-1]) + dp[i-1], abs(v[i] - v[i-2]) + dp[i-2]);
-	}
-	
-	cout << dp[N-1] << endl;
+
+    cin >> N;
+    v.resize(N);
+    dp.resize(N);
+    fill(all(dp), 0);
+
+    for(int i = 0; i < N; i++) {
+        cin >> v[i];
+    }
+
+    for(int i = 1; i < N; i++) {
+        if(i == 1) dp[i] = abs(v[i] - v[i-1]) + dp[i-1];
+        else dp[i] = min(abs(v[i] - v[i-1]) + dp[i-1], abs(v[i] - v[i-2]) + dp[i-2]);
+    }
+
+    cout << dp[N-1] << endl;
 
     return 0;
 }
