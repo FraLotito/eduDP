@@ -33,7 +33,7 @@ int main() {
 	for(int i = 0; i < M; i++){
 		int a, b;
 		cin >> a >> b;
-		g[a].push_back(b);
+	    g[a].push_back(b);
 	}
 	
 	for(int i = 1; i <= N; i++) {
